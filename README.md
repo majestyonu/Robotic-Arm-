@@ -35,7 +35,7 @@ The system uses **flex sensors** embedded in a glove worn by the user to detect 
 ## 📦 STL Files
 
 You can download the open-source 3D models for the hand and fingers here:  
-**[👉 STL Files Repository](https://your-link-here.com)** *(Replace this with your actual link)*
+**[[👉 STL Files (https://www.thingiverse.com/thing:12660)** 
 
 ---
 
