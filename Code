@@ -1,0 +1,51 @@
+#include <Servo.h> 
+
+Servo myServo1;  // Servo for finger 1
+Servo myServo2;  // Servo for finger 2
+Servo myServo3;  // Servo for finger 3
+Servo myServo4;  // Servo for finger 4
+Servo myServo5;  // Servo for finger 5
+
+const int flexPin1 = A0;  // Flex sensor 1
+const int flexPin2 = A1;  // Flex sensor 2
+const int flexPin3 = A2;  // Flex sensor 3
+const int flexPin4 = A3;  // Flex sensor 4
+const int flexPin5 = A4;  // Flex sensor 5
+
+void setup() 
+{
+  myServo1.attach(11);  // Attach servo 1 to pin 11
+  myServo2.attach(10);  // Attach servo 2 to pin 10
+  myServo3.attach(9);   // Attach servo 3 to pin 9
+  myServo4.attach(6);   // Attach servo 4 to pin 6
+  myServo5.attach(5);   // Attach servo 5 to pin 5
+}
+
+void loop() 
+{ 
+  int flexValue1 = analogRead(flexPin1);
+  int flexValue2 = analogRead(flexPin2);
+  int flexValue3 = analogRead(flexPin3);
+  int flexValue4 = analogRead(flexPin4);
+  int flexValue5 = analogRead(flexPin5);
+
+  int servoPosition1 = map(flexValue1, 800, 900, 0, 180);
+  int servoPosition2 = map(flexValue2, 800, 900, 0, 180);
+  int servoPosition3 = map(flexValue3, 800, 900, 0, 180);
+  int servoPosition4 = map(flexValue4, 800, 900, 0, 180);
+  int servoPosition5 = map(flexValue5, 800, 900, 0, 180);
+
+  servoPosition1 = constrain(servoPosition1, 0, 180);
+  servoPosition2 = constrain(servoPosition2, 0, 180);
+  servoPosition3 = constrain(servoPosition3, 0, 180);
+  servoPosition4 = constrain(servoPosition4, 0, 180);
+  servoPosition5 = constrain(servoPosition5, 0, 180);
+
+  myServo1.write(servoPosition1);
+  myServo2.write(servoPosition2);
+  myServo3.write(servoPosition3);
+  myServo4.write(servoPosition4);
+  myServo5.write(servoPosition5);
+
+  delay(10);  // Short delay to stabilize
+}
